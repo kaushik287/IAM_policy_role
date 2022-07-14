@@ -1,0 +1,24 @@
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: Policy
+metadata:
+  name: kaushik-policy  
+spec:
+  forProvider:
+    name: external-name
+    document: |
+      {
+        "Version": "2022-05-31",
+        "Statement": [
+         {
+            "Action": "ec2:*",
+            "Effect": "Allow",
+            "Resource": "*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:*",
+            "Resource": "*"
+          }
+
+        ]
+      }
